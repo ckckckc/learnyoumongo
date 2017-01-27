@@ -12,13 +12,20 @@ Create the data directory.
 
 `mkdir data`
 
-To start mongo on port 27017, run 
+To start mongo on port 27017, run `mongod --port 27017 --dbpath=./data.`in the terminal.
 
-`mongod --port 27017 --dbpath=./data.`
-
-Then, in another terminal, run 
+Install the `mongodb` module:
 
 `npm install mongodb.`
+
+```
+var url = 'mongodb://localhost:27017/dbname';
+mongo.connect(url, function(err, db) {
+  if (err) throw err;
+
+  db.close();
+});
+```
 
 
 ## Search for Documents
