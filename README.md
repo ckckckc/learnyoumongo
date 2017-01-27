@@ -30,7 +30,7 @@ To get a collection, one can use
 
 To find a document or documents, one needs to call `find()` on the `collection`.
 
-The `find` example is in the <a href="./find/find.js">find</a> file.
+The `find` example is in the <a href="./find/find.js">file</a>.
 
 
 Source
