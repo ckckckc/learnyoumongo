@@ -1,5 +1,9 @@
 # learnyoumongo
 
+These are codes about learning mongodb from [learnyoumongo](https://github.com/evanlucas/learnyoumongo).
+
+Every .js file contains my solution and standard solution.
+
 ## Connect
 
 Start mongod on port 27017 with data as the dbpath
@@ -29,6 +33,6 @@ To find a document or documents, one needs to call `find()` on the `collection`.
 The `find` example is in the <a href="./find/find.js">find</a> file.
 
 
-
-
-source from <a href="https://github.com/evanlucas/learnyoumongo" target="_blank">learnyoumongo</a>
+Source
+---
+ [learnyoumongo](https://github.com/evanlucas/learnyoumongo)
