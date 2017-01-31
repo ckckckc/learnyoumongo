@@ -5,18 +5,23 @@ var age = Number(process.argv[2]);
 
 mongo.connect(url, function(err, db) {
   if (err) throw err;
-
-  db.collection('parrots')
-    .find({
-      "age": {$gt: age}
-    })
-    .toArray(function(err, documents) {
-      if (err) throw err;
-      console.log(documents);
-    });
-
+  
+  var parrots = db.collection('parrots');
+  
+  parrots.find({
+    "age"  : {$gt : age}
+  }, {
+    "name" : 1,
+    "age"  : 1,
+    "_id"  : 0
+  }).toArray(function(err, docs) {
+    if (err) throw err;
+    console.log(docs);
+  });
+  
   db.close();
 });
+
 
 // SOLUTION
 // var mongo = require('mongodb').MongoClient
@@ -31,6 +36,10 @@ mongo.connect(url, function(err, db) {
 //     age: {
 //       $gt: +age
 //     }
+//   }, {
+//     name: 1
+//   , age: 1
+//   , _id: 0
 //   }).toArray(function(err, docs) {
 //     if (err) throw err
 //     console.log(docs)
