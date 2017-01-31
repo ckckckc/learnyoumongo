@@ -19,7 +19,9 @@ Install the `mongodb` module:
 `npm install mongodb.`
 
 ```
+var mongo = require('mongodb').MongoClient;
 var url = 'mongodb://localhost:27017/dbname';
+
 mongo.connect(url, function(err, db) {
   if (err) throw err;
 
@@ -60,6 +62,9 @@ db.collection('parrots').find({
   "_id"  : 0
 })
 ```
+
+`$gt` equals `>`, `$gte` equals `>=`
+
 Just like
 
 ```
@@ -67,8 +72,6 @@ SELECT name, age
 FROM parrots 
 WHERE age >= $age
 ```
-
-`$gt` equals `>`, `$gte` equals `>=`
 
 Source
 ---
