@@ -41,7 +41,7 @@ To find a document or documents, one needs to call `find()` on the `collection`.
 
 The `find` example is in the <a href="./find/">find</a> folder.
 
-### db.collection.find()
+### syntax
 
 `db.collection.find(query, projection)`
 
@@ -53,7 +53,7 @@ Optional. Specifies selection filter using query operators. To return all docume
 
 Optional. Specifies the fields to return in the documents that match the query filter. To return all fields in the matching documents, omit this parameter.
 
-#### find example:
+### example:
 
 ```
 db.collection('parrots').find({
