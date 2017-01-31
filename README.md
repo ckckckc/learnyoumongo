@@ -51,7 +51,9 @@ Optional. Specifies selection filter using query operators. To return all docume
   
 #### projection
 
-Optional. Specifies the fields to return in the documents that match the query filter. To return all fields in the matching documents, omit this parameter. For details, see Projection.
+Optional. Specifies the fields to return in the documents that match the query filter. To return all fields in the matching documents, omit this parameter.
+
+#### find example:
 
 ```
 db.collection('parrots').find({
