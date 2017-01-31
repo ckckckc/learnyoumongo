@@ -63,7 +63,12 @@ db.collection('parrots').find({
 })
 ```
 
+`query`:
 `$gt` equals `>`, `$gte` equals `>=`
+
+`projection`:
+`1` or `true` to include the field in the return documents.
+`0` or `false` to exclude the field.
 
 Just like
 
