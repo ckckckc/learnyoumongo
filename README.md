@@ -37,7 +37,7 @@ To get a collection, one can use
 
 To find a document or documents, one needs to call `find()` on the `collection`.
 
-The `find` example is in the <a href="./find/find.js">file</a> and <a href="./find/find_project.js">this file</a>.
+The `find` example is in the <a href="./find/">find</a> folder.
 
 ### db.collection.find()
 
