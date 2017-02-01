@@ -80,6 +80,35 @@ FROM parrots
 WHERE age >= $age
 ```
 
+
+## Insert
+
+### Syntax
+
+```
+db.collection.insert(data, callback)
+```
+
+### Example
+
+```
+db.collection("collectionName").insert({ 
+  col1 : value1,
+  col2 : value2,
+}, function(err, data) {
+  // handle error
+
+  // other operations
+})
+```
+
+Just like
+
+```
+INSERT INTO collectionName (col1,col2) 
+VALUES(value1, value2);
+```
+
 Source
 ---
  [learnyoumongo](https://github.com/evanlucas/learnyoumongo)
