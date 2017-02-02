@@ -80,7 +80,6 @@ FROM parrots
 WHERE age >= $age
 ```
 
-
 ## Insert
 
 ### Syntax
@@ -107,6 +106,47 @@ Just like
 ```
 INSERT INTO collectionName (col1,col2) 
 VALUES(value1, value2);
+```
+
+## Update
+
+### Syntax
+
+`db.collection.update(query, update, options)`
+
+#### query
+
+The selection criteria for the update. The same query selectors as in the find() method are available.
+
+#### update
+
+The modifications to apply
+
+#### options
+
+[docs](https://docs.mongodb.com/manual/reference/method/db.collection.update/#db-collection-update)
+
+### Example
+
+```
+var collection = db.collection(collectionName)
+collection.update({
+  username: username
+}, {
+  $set: {
+    age: age
+  }
+})
+```
+
+If we were to omit $set, the document would be replaced with the object represented by the second argument.
+
+Just like
+
+```
+UPDATE collectionName
+SET age = $age
+WHERE username = $username;
 ```
 
 Source
