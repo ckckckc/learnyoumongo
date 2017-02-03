@@ -149,6 +149,31 @@ SET age = $age
 WHERE username = $username;
 ```
 
+## remove
+
+### Syntax
+
+`db.collection.remove(query, options)`
+
+### Example
+
+```
+var collection = db.collection(collectionName)
+collection.remove({
+  _id: _id
+})
+```
+
+Just like
+
+```
+DELETE FROM collectionName
+WHERE _id = $_id
+```
+
+
+
+
 Source
 ---
  [learnyoumongo](https://github.com/evanlucas/learnyoumongo)
