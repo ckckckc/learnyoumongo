@@ -17,9 +17,8 @@ mongo.connect(url, function(err, db){
       if (err) throw err;
   
       console.log(data);
+      db.close();
     });
-
-  db.close();
 });
 
 

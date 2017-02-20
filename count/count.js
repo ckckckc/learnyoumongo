@@ -1,22 +1,16 @@
 var mongo = require('mongodb').MongoClient;
-
 var url = 'mongodb://localhost:27017/learnyoumongo';
 var age = Number(process.argv[2]);
 
-mongo.connect(url, function(err, db) {
+mongo.connect(url, function(err, db){
   if (err) throw err;
   
   var parrots = db.collection('parrots');
   
-  parrots.find({
-    "age"  : {$gt : age}
-  }, {
-    "name" : 1,
-    "age"  : 1,
-    "_id"  : 0
-  }).toArray(function(err, docs) {
-    if (err) throw err;
-    console.log(docs);
+  parrots.count({
+    "age": {$gt: age}
+  }, function(err, count) {
+    console.log(count);
     db.close();
   });
 
@@ -32,17 +26,13 @@ mongo.connect(url, function(err, db) {
 // mongo.connect(url, function(err, db) {
 //   if (err) throw err
 //   var parrots = db.collection('parrots')
-//   parrots.find({
+//   parrots.count({
 //     age: {
 //       $gt: +age
 //     }
-//   }, {
-//     name: 1
-//   , age: 1
-//   , _id: 0
-//   }).toArray(function(err, docs) {
+//   }, function(err, count) {
 //     if (err) throw err
-//     console.log(docs)
+//     console.log(count)
 //     db.close()
 //   })
 // })

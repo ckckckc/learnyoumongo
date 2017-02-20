@@ -149,7 +149,7 @@ SET age = $age
 WHERE username = $username;
 ```
 
-## remove
+## Remove
 
 ### Syntax
 
@@ -171,7 +171,7 @@ DELETE FROM collectionName
 WHERE _id = $_id
 ```
 
-
+## Count
 
 
 Source
