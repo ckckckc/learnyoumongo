@@ -173,6 +173,31 @@ WHERE _id = $_id
 
 ## Count
 
+### Syntax
+
+```
+db.collection.count(query, options)
+```
+
+### Example
+
+```
+db.collection('parrots').count({
+  "age": {$gt: age}
+}, function(err, count) {
+  console.log(count);
+});
+```
+
+Just like
+
+```
+SELECT COUNT(*)
+FROM   parrots
+WHERE  age > $age
+```
+
+
 
 Source
 ---
