@@ -197,6 +197,8 @@ FROM   parrots
 WHERE  age > $age
 ```
 
+## Aggregation
+
 
 
 Source
