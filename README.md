@@ -199,6 +199,46 @@ WHERE  age > $age
 
 ## Aggregation
 
+[Aggregation](https://docs.mongodb.com/manual/aggregation/)
+
+### Syntax
+
+```
+db.collection.aggregate([
+  $match stage,
+  $group stage
+])
+```
+
+### Example
+
+```
+db.collection.aggregate([
+  {
+    $match: { 
+      "size": size
+    }
+  },
+  {
+    $group: {
+      _id: null,
+      avg: {
+        $avg: '$price'
+      }
+    }
+  }
+])
+```
+
+Just like
+
+```
+SELECT AVG(price) as avg
+FROM   collection
+WHERE  size = $size
+```
+
+> Use $field-name format, when you want to reference a field from the original or intermediary document.
 
 
 Source

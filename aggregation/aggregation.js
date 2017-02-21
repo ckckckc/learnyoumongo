@@ -23,7 +23,7 @@ mongo.connect(url, function(err, db){
   ]).toArray(function(err, results) {
     if (err) console.log(err);
     
-    if (!results.length) thrw new Error('Empty Result');
+    if (!results.length) throw new Error('Empty Result');
 
     console.log(Number(results[0].avg).toFixed(2));
 
